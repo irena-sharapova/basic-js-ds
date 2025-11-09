@@ -1,4 +1,4 @@
-const { NotImplementedError } = require('../lib/errors');
+const { NotImplementedError } = require("../lib/errors");
 
 /**
  * Implement the Stack with a given interface via array.
@@ -13,21 +13,27 @@ const { NotImplementedError } = require('../lib/errors');
  *
  */
 class Stack {
-  push(/* value */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  constructor() {
+    this.item = [];
+    if (!this.item) throw new NotImplementedError("Not implemented");
+  }
+
+  push(value) {
+    this.item.push(value);
+    if (!this.item) throw new NotImplementedError("Not implemented");
   }
 
   pop() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    if (!this.item) throw new NotImplementedError("Not implemented");
+    return this.item.pop();
   }
 
   peek() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    if (this.item.length === 0) {
+    throw new NotImplementedError("Not implemented");
   }
-}
+    return this.item[this.item.length - 1];
+}}
 
 module.exports = {
   Stack,
